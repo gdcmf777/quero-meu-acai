@@ -32,7 +32,7 @@ export default function Cards({ id, kind, imageUrl, flavorKind }: ICardProps) {
                 {selectedId === id &&
                     <div className={styles.detailContent}>
                     {flavorKind[selectedId].detail.map((detail, i ) => (
-                        <div key={id} onChange={(e) => changeSize(e)}>
+                        <div key={i} onChange={(e) => changeSize(e)}>
                             <label>
                                 <input type="radio" value={detail.idDetail} name="size" /> 
                                 <span key={i}>{detail.size}</span>
