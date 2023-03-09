@@ -1,14 +1,11 @@
 import { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
-import { Inter } from '@next/font/google'
 import styles from '../styles/styles.module.scss'
 import Button from '@/components/Button'
 import { mock } from '../mock/mock'
 import { IFlavorMock, IDetailMock } from '@/types'
 import Cards from '@/components/Cards'
 import { CustomerRequestContext } from '@/context/CustomerRequestContext'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   
