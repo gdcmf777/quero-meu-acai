@@ -12,7 +12,7 @@ interface ICardProps {
   }
 
 export default function Cards({ id, kind, imageUrl, flavorKind }: ICardProps) {
-    const [selectedId, setSelectedId] = useState<number | null>(null);
+    const [selectedId, setSelectedId] = useState<number>(-1);
     const { setFlavorAndSize } = useContext(CustomerRequestContext)
 
     const changeSize = e => {

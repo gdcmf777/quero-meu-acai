@@ -6,7 +6,8 @@ interface IPropsValue {
     reqSize: string,
     setFlavorAndSize: (flavor: string, size: string, flavorId:number, detailId: number) => void,
     getTime: () => string,
-    setReqComplement: () => void
+    setReqComplement: React.Dispatch<React.SetStateAction<string>>,
+    reqComplement: string
 }
 
 export const CustomerRequestContext = createContext('')
