@@ -1,0 +1,35 @@
+.cardContent {
+    margin-right: 3.5rem;
+    cursor: pointer;
+
+    .imgContent{        
+        transition: filter 0.5s;
+        &:hover {
+            filter: brightness(0.8);
+        } 
+    }
+
+    .descContent {
+        padding: 10px;
+        width: 100%;
+
+        .titleCard {
+            font-size: 2rem;
+            color: var(--purple-mountain);
+        }
+
+        .detailContent {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+
+            span{
+                text-transform: capitalize;
+                margin-left: 10px;
+                font-size: 1.2rem;
+                padding: 2px;
+            }
+        }
+
+    }
+}

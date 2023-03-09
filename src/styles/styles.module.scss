@@ -1,0 +1,49 @@
+.contentContainer {
+    max-width: 1120px;
+    margin: 0 auto;   
+    height: 900px;
+
+    .sloganHome {
+
+        padding: 2.9rem 0;        
+        
+        h2 {
+            font-size: 1.6rem;
+            color: var(--purple-mountain);
+        }
+    }
+
+    .flavorContent {
+        margin-top: 80px;
+        color: var(--purple-mountain);
+        
+        .cardsContent {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            .detailContent {
+                height: 15px;
+                // border: 1px solid
+                flex-direction: column;
+            }
+        }
+
+        .linkContent {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            a {
+                text-align: center;
+                padding-top:10px;
+                width: 150px;
+                height: 40px;
+                background-color: var(--purple-navy);;
+                color: var(--ghost-white);
+                border-radius: 4px;
+            }
+        }
+    }
+}
+

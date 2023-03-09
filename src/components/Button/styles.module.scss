@@ -1,0 +1,19 @@
+.btnContent {
+    button {
+        width: 200px;
+        height: 40px;
+        border-style: none;
+        border-radius: 4px;
+        background-color: var(--purple-navy);
+        transition: filter 0.4s;
+        
+        &:hover {
+            filter: brightness(0.6);
+        }
+
+        span{
+            font-weight: 700;
+            color: var(--ghost-white);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.complementContent {
+    margin-top: 20px;
+    max-width: 1120px;
+    margin: 0 auto;   
+    height: 650px;
+
+    h3 {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: var(--purple-mountain);
+        font-size: 2.7rem;
+    }
+    
+    span {
+        
+        color: var(--purple-mountain);
+        font-size: 1.2rem;
+    }
+
+    .chooseContent {
+        margin-top: 90px;
+
+        h4 {
+            color: var(--purple-mountain);
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        select {
+            width: 50%;
+            border: 1px solid var(--glossy-grape);
+            border-radius: 4px;
+            padding: 12px 0;
+            font-size: 1.4rem;
+            color: var(--purple-mountain);
+        }
+    }
+    .linkContent {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        a {
+            text-align: center;
+            padding-top:10px;
+            width: 150px;
+            height: 40px;
+            background-color: var(--purple-navy);;
+            color: var(--ghost-white);
+            border-radius: 4px;
+        }
+    }
+}
