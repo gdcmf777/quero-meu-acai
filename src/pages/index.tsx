@@ -8,14 +8,12 @@ import Cards from '@/components/Cards'
 import { CustomerRequestContext } from '@/context/CustomerRequestContext'
 import { FaArrowCircleRight } from "react-icons/fa" 
 
-
-
 export default function Home({ data }: object ) {
   
+  const { reqFlavor, reqSize } = useContext(CustomerRequestContext)
   const inputUserRef = useRef(null);
   const [flavorKind, setFlavorKind] = useState<IFlavorMock[]>()
   const [slideInputContent, setSlideInputContent] = useState(false);
-  const { reqFlavor, reqSize } = useContext(CustomerRequestContext)
 
   const loadProducts = async () => {
     setFlavorKind(data)

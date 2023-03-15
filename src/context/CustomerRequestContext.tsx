@@ -10,7 +10,14 @@ interface IPropsValue {
     reqComplement: string
 }
 
-export const CustomerRequestContext = createContext('')
+export const CustomerRequestContext = createContext<IPropsValue>({
+    reqFlavor: '',
+    reqSize: '',
+    setFlavorAndSize: () => {},
+    getTime: () => '',
+    setReqComplement: () => {},
+    reqComplement: ''
+})
 
 export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
     const [reqFlavor, setReqFlavor] = useState('');
@@ -18,6 +25,7 @@ export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
     const [reqId, setReqId] = useState(0);
     const [detailId, setDetailId] = useState(0);
     const [reqComplement, setReqComplement] = useState('');
+    const [customerName, setCustomerName] = useState('');
 
     const setFlavorAndSize = (flavor: string, size: string, flavorId: number, detId: number) => {
         setReqFlavor(flavor)
