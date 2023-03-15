@@ -1,3 +1,14 @@
+:root {
+  --ghost-white: #fbf9ff;
+  --glossy-grape: #AB92BF;
+  --purple-mountain: #9474AE;
+  --purple-navy: #655A7C;
+  --light-steel-blue: #AFC1D6;
+  --sage: #D6CA98;
+  --bg-header: #141A29;
+  --bg-green-msg: rgb(72, 108, 72);
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -31,15 +42,4 @@ button{
 a{
   text-decoration: none;
   color: inherit;
-}
-
-:root {
-  --ghost-white: #fbf9ff;
-  --glossy-grape: #AB92BF;
-  --purple-mountain: #9474AE;
-  --purple-navy: #655A7C;
-  --light-steel-blue: #AFC1D6;
-  --sage: #D6CA98;
-  --bg-header: #141A29;
-  --bg-green-msg: rgb(72, 108, 72);
 }

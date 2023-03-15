@@ -1,22 +1,69 @@
+// $slide-in-out: slideIn 1.8s forwards;
+// // $slide-out: slideOut 1.8s forwards;
+// $slideOutclassNm: "";
+// $border: 1px solid red;
+
+// @if $slideOutclassNm == "slideOutClass" {
+//     $slide-in-out: slideOut 1.8s forwards;
+//     $border: 1px solid blue;
+// }
+
 .contentContainer {
     max-width: 1120px;
     margin: 0 auto;   
-    height: 900px;
+    // height: 900px;
 
-    .sloganHome {
-
+    .nameContainer {
+        margin-bottom: 60px;
         padding: 2.9rem 0;        
-        
-        h2 {
-            font-size: 1.6rem;
-            color: var(--purple-mountain);
+        animation: slideIn 1.8s forwards;
+        // animation: $slide-in-out;
+        // border: $border;
+
+        h4 {
+            font-size: 1.4rem;
+            color: var(--purple-mountain)
+        }
+        h1 {
+            font-size: 2.8rem;
+            color: var(--purple-mountain)
+        }
+
+        .inputContent{
+            
+            input {
+                margin-top: 30px;
+                width: 40%;
+                border-style: none;
+                border-bottom: 1px solid var(--glossy-grape);
+                background-color: transparent;
+                color: var(--glossy-grape);
+                font-size: 2.0rem;
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            svg {
+                color: var(--glossy-grape);
+                margin-left: 50px;
+                cursor: pointer;
+                transition: all .5s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
         }
     }
+
 
     .flavorContent {
         margin-top: 80px;
         color: var(--purple-mountain);
-        
+        animation: fadeIn 1.8s ease-in-out;
+
         .cardsContent {
             display: flex;
             justify-content: space-between;
@@ -24,7 +71,6 @@
 
             .detailContent {
                 height: 15px;
-                // border: 1px solid
                 flex-direction: column;
             }
         }
@@ -47,3 +93,22 @@
     }
 }
 
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes slideOut {
+    from { transform: translateX(30px); }
+    to { transform: translateX(-100px); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(0px); }
+    to { transform: translateX(30px); }
+}
