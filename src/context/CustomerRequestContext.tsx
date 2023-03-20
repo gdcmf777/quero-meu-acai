@@ -1,4 +1,4 @@
-import React, { useState, createContext, PropsWithChildren } from 'react'
+import React, { useState, createContext, PropsWithChildren, SetStateAction, useRef, MutableRefObject, RefObject } from 'react'
 import { mock } from '../mock/mock'
 
 interface IPropsValue {
@@ -7,7 +7,9 @@ interface IPropsValue {
     setFlavorAndSize: (flavor: string, size: string, flavorId:number, detailId: number) => void,
     getTime: () => string,
     setReqComplement: React.Dispatch<React.SetStateAction<string>>,
-    reqComplement: string
+    reqComplement: string,
+	setCustomerInputRef: (userName: string | undefined) => string | undefined
+	userCustomer: string | undefined
 }
 
 export const CustomerRequestContext = createContext<IPropsValue>({
@@ -16,7 +18,9 @@ export const CustomerRequestContext = createContext<IPropsValue>({
     setFlavorAndSize: () => {},
     getTime: () => '',
     setReqComplement: () => {},
-    reqComplement: ''
+    reqComplement: '',
+	setCustomerInputRef: () => '',
+	userCustomer: ''
 })
 
 export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
@@ -25,7 +29,8 @@ export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
     const [reqId, setReqId] = useState(0);
     const [detailId, setDetailId] = useState(0);
     const [reqComplement, setReqComplement] = useState('');
-    const [customerName, setCustomerName] = useState('');
+    // const [userCustomer, setUserCustomer] = useState('');
+	let userCustomer: string | undefined = "";
 
     const setFlavorAndSize = (flavor: string, size: string, flavorId: number, detId: number) => {
         setReqFlavor(flavor)
@@ -40,13 +45,20 @@ export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
         return deliveryTime
     }
 
-    const value: IPropsValue = {
+	const setCustomerInputRef = (value: string | undefined ) => {
+		userCustomer = value
+		return userCustomer
+	}
+
+    const value = {
         reqFlavor,
         reqSize,
         setFlavorAndSize,
         getTime,
         setReqComplement,
-        reqComplement
+        reqComplement,
+        setCustomerInputRef,
+		userCustomer
     }
 
     return (

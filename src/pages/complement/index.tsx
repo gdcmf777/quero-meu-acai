@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, ChangeEvent } from 'react'
 import { CustomerRequestContext } from '@/context/CustomerRequestContext'
 import Image from 'next/image'
 import styles from './styles.module.scss'
@@ -6,13 +6,13 @@ import Link from 'next/link'
 
 export default function Complement() {
 
-  const { reqFlavor, reqSize, setReqComplement } = useContext(CustomerRequestContext)
+  const { reqFlavor, reqSize, setReqComplement, userCustomer } = useContext(CustomerRequestContext)
 
-  const getComplement = e => setReqComplement(e.target.value)
+  const getComplement = (e: ChangeEvent<HTMLSelectElement>) => setReqComplement(e.target.value)
 
   return (
     <div className={styles.complementContent}>
-      <h3>Seu pedido até aqui: </h3>
+      <h3>{userCustomer}, seu pedido até aqui: </h3>
       {reqFlavor&& reqSize&& 
         (<span>{`Açaí de ${reqFlavor} com tamanho ${reqSize}`}</span>)
       }

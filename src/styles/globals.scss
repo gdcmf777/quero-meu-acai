@@ -1,7 +1,8 @@
 :root {
   --ghost-white: #fbf9ff;
-  --glossy-grape: #AB92BF;
+  --glossy-grape: #AB92BF; 
   --purple-mountain: #9474AE;
+  --purple-mountain-scroll: #b9a6c9;
   --purple-navy: #655A7C;
   --light-steel-blue: #AFC1D6;
   --sage: #D6CA98;
@@ -42,4 +43,17 @@ button{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--ghost-white);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--purple-mountain-scroll); 
+  border-radius: 3px;
 }
