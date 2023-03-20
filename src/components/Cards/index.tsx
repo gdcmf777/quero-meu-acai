@@ -15,7 +15,7 @@ export default function Cards({ id, kind, imageUrl, flavorKind }: ICardProps) {
     const [selectedId, setSelectedId] = useState<number>(-1);
     const { setFlavorAndSize } = useContext(CustomerRequestContext)
 
-    const changeSize = e => {
+    const changeSize = (e: any) => {
         const flavorName = flavorKind[selectedId].kind
         const size = flavorKind[selectedId].detail[e.target.value].size
         const detailId = e.target.value
@@ -34,7 +34,7 @@ export default function Cards({ id, kind, imageUrl, flavorKind }: ICardProps) {
                     {flavorKind[selectedId].detail.map((detail, i ) => (
                         <div key={i} onChange={(e) => changeSize(e)}>
                             <label>
-                                <input type="radio" value={detail.idDetail} name="size" /> 
+                                <input type="radio" value={detail.idDetail} name="size" />
                                 <span key={i}>{detail.size}</span>
                             </label>
                         </div>
