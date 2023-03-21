@@ -12,7 +12,7 @@ interface IProps {
 }
 
 export default function Home({ data }: IProps ) {
-
+console.log("DDDDD",data)
 	const { reqFlavor, reqSize, setCustomerInputRef } = useContext(CustomerRequestContext)
 	const inputUserRef = useRef<HTMLInputElement>(null);
 	const [flavorKind, setFlavorKind] = useState<IFlavorMock[]>()
@@ -73,9 +73,10 @@ export default function Home({ data }: IProps ) {
 export const getStaticProps = async () => {
 
   let data = [{}]
-  const response = await api.get('/produtos');
-  data = response.data
+  const response = await api.get('/');
 
+  data = response.data
+  console.log("AAAAAAAAAAAAAAA",data)
   return {
     props: {
       data,

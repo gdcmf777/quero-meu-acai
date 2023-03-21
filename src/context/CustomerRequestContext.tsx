@@ -41,7 +41,7 @@ export const CustomerRequestProvider = ({ children }:PropsWithChildren) => {
 
     const getTime = () => {
         const nodeRequest = mock.filter((el) => el.kind === reqFlavor )
-        const deliveryTime = nodeRequest[0].detail[detailId].deliveryTime
+        const deliveryTime = nodeRequest[0].detail[detailId]?.deliveryTime
         return deliveryTime
     }
 
