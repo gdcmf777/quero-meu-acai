@@ -3,7 +3,7 @@ name: Pull Request
 on: [pull_request]
 
 jobs:
-	install:
+	build:
 		name: Installing Packages
 		runs-on: ubuntu-latest
 		steps:
